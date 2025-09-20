@@ -1,0 +1,27 @@
+class MyRobotClass {
+private:
+  // A non-static member function that contains the thread's logic.
+  void handleFRMotorLogic() {
+    while (true) {
+      // ...
+      vex::this_thread::sleep_for(10);
+    }
+  }
+
+  // A static "trampoline" function that takes a void* to the object.
+  static int trampoline(void* instance) {
+    if (instance) {
+      // Cast the void* back to the correct class pointer.
+      MyRobotClass* my_class_instance = static_cast<MyRobotClass*>(instance);
+      // Call the non-static member function on that instance.
+      my_class_instance->handleFRMotorLogic();
+    }
+    return 0; // Return value is required by VEX thread signature.
+  }
+
+public:
+  void startThreads() {
+    // Pass the static trampoline function and a pointer to 'this'.
+    vex::thread threadFR_Motor(MyRobotClass::trampoline, this);
+  }
+};

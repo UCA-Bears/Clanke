@@ -6,6 +6,7 @@
     #include "vex.h"
     #include "functions.h"
     #include "auton.h"
+    #include "threadedDriveMotor.h"
     #include <cmath>
     using namespace vex;
 
