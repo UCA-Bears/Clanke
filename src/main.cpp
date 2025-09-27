@@ -68,7 +68,6 @@ void usercontrol(void) {
 
 
   thread threadDrive = thread(threadedDrive);
-  thread threadBrakes = thread(threadedBrakes);
   FR_Thread.StartThreads();
   FL_Thread.StartThreads();
   BR_Thread.StartThreads();

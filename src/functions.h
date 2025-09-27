@@ -4,7 +4,5 @@
     #include "main.h"
     void threadedDrive();
 
-    void threadedBrakes();
-
 
 #endif

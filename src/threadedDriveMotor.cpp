@@ -3,8 +3,10 @@
 /// @brief This should be called as a thread, which will then handle turning the drive motor
 void vex::threadedDriveMotor::Handle() {
     while(this->hasInit) {
-        
-        if (isTurnNegative) {
+        if (*forwardControlValue == 0 && *turnControlValue == 0) {
+            internalMotor->stop(brake);
+        }
+        else if (isTurnNegative) {
             internalMotor->spin(fwd, *forwardControlValue - *turnControlValue, pct);
         } else {
             internalMotor->spin(fwd, *forwardControlValue + *turnControlValue, pct); 
