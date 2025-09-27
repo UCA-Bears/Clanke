@@ -19,14 +19,13 @@ competition Competition;
   controller Controller1 = controller();
 
 //Motors 
-  motor FR_Motor = motor(PORT2);
-  motor FL_Motor = motor(PORT9, true);
-  motor BR_Motor = motor(PORT10);
-  motor BL_Motor = motor(PORT1, true); 
+  motor FR_Motor = motor(PORT10, false);
+  motor FL_Motor = motor(PORT1, true);
+  motor BR_Motor = motor(PORT20, false);
+  motor BL_Motor = motor(PORT11, true); 
 //Motor Groups
   motor_group LD_Motors = motor_group(FL_Motor, BL_Motor);
   motor_group RD_Motors = motor_group( FR_Motor, BR_Motor);
-  motor_group R_Motors = motor_group(RR_Motor, LR_Motor);
 //Sensors
 
 // Variables
@@ -70,13 +69,11 @@ void usercontrol(void) {
 
   thread threadDrive = thread(threadedDrive);
   thread threadBrakes = thread(threadedBrakes);
-  thread threadFR_Motor = thread([&FR_Thread]()  {
-    FR_Thread.Handle();
-
-  });
-  thread threadFL_Motor = thread(threadedFL_Motor);
-  thread threadBR_Motor = thread(threadedBR_Motor);
-  thread threadBL_Motor = thread(threadedBL_Motor);
+  FR_Thread.StartThreads();
+  FL_Thread.StartThreads();
+  BR_Thread.StartThreads();
+  BL_Thread.StartThreads(); 
+ 
 
   while (1) {
     

@@ -12,6 +12,7 @@ namespace vex {
 
             void Handle() override;
 
+            using threadedMotor::StartThreads;
         protected:
             double* forwardControlValue = nullptr;
             double* turnControlValue = nullptr;

@@ -21,7 +21,7 @@ void vex::threadedDriveMotor::Handle() {
 /// @param ForwardControlValue The pointer for the forwardDriveAxis Value.
 /// @param TurnControlValue The Pointer for the turnDriveAxis Value, (turning)
 /// @param IsTurnNegative // If turning needs to be subtractive rather than additve (right side to turn right for example)
-vex::threadedDriveMotor::threadedDriveMotor(vex::motor* motor, double* ForwardControlValue, double* TurnControlValue, bool IsTurnNegative = false) 
+vex::threadedDriveMotor::threadedDriveMotor(vex::motor* motor, double* ForwardControlValue, double* TurnControlValue, bool IsTurnNegative) 
 : vex::threadedMotor(motor) {
     this->hasInit = true;
     this->forwardControlValue = ForwardControlValue;

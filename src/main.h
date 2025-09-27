@@ -17,15 +17,8 @@
         extern motor FL_Motor; //Front Left Motor
         extern motor BR_Motor; //Back Right Motor
         extern motor BL_Motor; //Back Left Motor
-        extern motor CL_Motor; //Center Left Motor
-        extern motor CR_Motor; //Center Right Motor
-        extern motor Tail_Motor; //Tail Hitch Motor
-        extern motor Cv_Motor; //Conveyer Motor
-        extern motor LR_Motor; //Left Roller
-        extern motor RR_Motor; //Right Roller
 
     //Motor Groups
-        extern motor_group R_Motors; //Roller Motors
         extern motor_group RD_Motors; //Right Side Drive Motors
         extern motor_group LD_Motors; //Left Side Drive Motors
     //Sensors 

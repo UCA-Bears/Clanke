@@ -17,6 +17,9 @@ namespace vex {
             /// @brief This should be called as a thread, this will handle moving this motor.
             virtual void Handle() = 0;
 
+            static int Trampoline(void* instance);
+            void StartThreads();
+
 
         protected:
             vex::motor* internalMotor;
