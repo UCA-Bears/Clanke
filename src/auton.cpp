@@ -61,10 +61,3 @@ void turn(int speed, vex::rotationUnits degr ) {
 
 
 }
-
-void intake(float time) {
-    Cv_Motor.setVelocity(Cv_Speed, pct);
-    Cv_Motor.spin(fwd);
-    wait(time, msec);
-    Cv_Motor.stop(hold); 
-}
