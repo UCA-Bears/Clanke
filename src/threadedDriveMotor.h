@@ -1,18 +1,18 @@
 #ifndef THREADEDDRIVEMOTOR_H
 #define THREADEDDRIVEMOTOR_H
 
-#include "threadedMotor.h"
+#include "threadedMotorBase.h"
 
 namespace vex {
 
-    class threadedDriveMotor : vex::threadedMotor {
+    class threadedDriveMotor : vex::threadedMotorBase {
         public: 
 
             threadedDriveMotor(vex::motor* motor, double* ForwardControlValue, double* TurnControlValue, bool IsTurnNegative = false);
 
             void Handle() override;
 
-            using threadedMotor::StartThreads;
+            using threadedMotorBase::StartThreads;
         protected:
             double* forwardControlValue = nullptr;
             double* turnControlValue = nullptr;

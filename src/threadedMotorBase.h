@@ -1,18 +1,18 @@
 // A Class for being the base storage for threading motors.
-#ifndef THREADEDMOTOR_H
-#define THREADEDMOTOR_H
+#ifndef THREADEDMOTORBASE_H
+#define THREADEDMOTORBASE_H
 
 #include "vex.h"
 
 
 namespace vex {
 
-    class threadedMotor {
+    class threadedMotorBase {
 
         public:
 
-            threadedMotor() = delete;
-            threadedMotor(vex::motor* motor);
+            threadedMotorBase() = delete;
+            threadedMotorBase(vex::motor* motor);
 
             /// @brief This should be called as a thread, this will handle moving this motor.
             virtual void Handle() = 0;

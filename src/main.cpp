@@ -77,7 +77,7 @@ void usercontrol(void) {
   while (1) {
     
 
-    wait(10, msec); 
+    wait(10, msec);
 
   }
 }
