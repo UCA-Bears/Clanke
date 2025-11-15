@@ -17,10 +17,13 @@
         extern motor FL_Motor; //Front Left Motor
         extern motor BR_Motor; //Back Right Motor
         extern motor BL_Motor; //Back Left Motor
+        extern motor intake_Motor_left; // motor to control the intake roller // prot 3
+        extern motor intake_Motor_right; // motor to control the intake roller // prot 8
 
     //Motor Groups
         extern motor_group RD_Motors; //Right Side Drive Motors
         extern motor_group LD_Motors; //Left Side Drive Motors
+        extern motor_group Intake_Motors; //'Intake motors gorup
     //Sensors 
         extern rotation Tail_Sensor;
     //Variables

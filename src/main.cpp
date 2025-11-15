@@ -23,9 +23,12 @@ competition Competition;
   motor FL_Motor = motor(PORT1, true);
   motor BR_Motor = motor(PORT20, false);
   motor BL_Motor = motor(PORT11, true); 
+  motor intake_Motor_left = motor(PORT3, false);
+  motor intake_Motor_right = motor(PORT8, true);
 //Motor Groups
   motor_group LD_Motors = motor_group(FL_Motor, BL_Motor);
   motor_group RD_Motors = motor_group( FR_Motor, BR_Motor);
+  motor_group Intake_Motors = motor_group(intake_Motor_left, intake_Motor_right);
 //Sensors
 
 // Variables
@@ -51,6 +54,7 @@ void autonomous(void) {
   //Negative Distance is Backwards, Positive is Forwards
   //Negative degrees is left, Positive is right
 
+  Intake_Motors.spin(fwd,100,pct);
   drive(50, vex::distanceUnits(40));
   turn(50, vex::rotationUnits(-50));
   drive(50, vex::distanceUnits(-36));
