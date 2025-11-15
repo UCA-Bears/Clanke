@@ -25,11 +25,16 @@ competition Competition;
   motor BL_Motor = motor(PORT11, true); 
   motor intake_Motor_left = motor(PORT3, false);
   motor intake_Motor_right = motor(PORT8, true);
+  motor intake_Motor_Back = motor(PORT15,true);
 //Motor Groups
   motor_group LD_Motors = motor_group(FL_Motor, BL_Motor);
   motor_group RD_Motors = motor_group( FR_Motor, BR_Motor);
-  motor_group Intake_Motors = motor_group(intake_Motor_left, intake_Motor_right);
+  motor_group Intake_Motors = motor_group(intake_Motor_left, intake_Motor_right,intake_Motor_Back);
 //Sensors
+  rotation leftMotors_Sensors(PORT10);
+  rotation RightMotors_Sensors(PORT9);
+  vision AIVisionSensor(PORT2);
+  
 
 // Variables
 
