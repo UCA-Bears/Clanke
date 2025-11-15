@@ -61,3 +61,19 @@ void turn(int speed, vex::rotationUnits degr ) {
 
 
 }
+
+void inTake(float time){
+    time = time + 1000; // Converts time to Msecs
+    Intake_Motors.spin(fwd,time,pct); // spin for amount of Time in seconds 
+    wait(time, msec);
+    Intake_Motors.stop();
+
+}
+
+void outTake(float time)
+{
+    time = time * 1000;
+    Intake_Motors.spin(reverse,time,pct);
+    wait(time, msec);
+    Intake_Motors.stop();
+}

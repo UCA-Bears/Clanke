@@ -34,7 +34,6 @@ competition Competition;
   rotation leftMotors_Sensors(PORT10);
   rotation RightMotors_Sensors(PORT9);
   vision AIVisionSensor(PORT2);
-  
 
 // Variables
 
@@ -59,13 +58,7 @@ void autonomous(void) {
   //Negative Distance is Backwards, Positive is Forwards
   //Negative degrees is left, Positive is right
 
-  Intake_Motors.spin(fwd,100,pct);
-  drive(50, vex::distanceUnits(40));
-  turn(50, vex::rotationUnits(-50));
-  drive(50, vex::distanceUnits(-36));
-  turn(50, vex::rotationUnits(60));
-  drive(50, vex::distanceUnits(-30));
-  drive(50, vex::distanceUnits(20));
+  outTake(5);
 
 
 }

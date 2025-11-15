@@ -21,6 +21,7 @@
     void turn(int speed, float time);
     void turn(int speed, vex::rotationUnits degr);
 
-    void intake(float time);
+    void inTake(float time);
+    void outTake(float time);
 
 #endif
